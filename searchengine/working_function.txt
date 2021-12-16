@@ -1,0 +1,24 @@
+
+video 
+
+
+working model
+First see how its work..?
+
+
+Now see the crawler :
+search crawler --> 
+1.Search the website and extract the title and url , I use my website for crawling
+2.make the csv file
+
+
+Upload to Elastic Search :
+1.Now we have the data-file we can use upload.py to 
+upload to the elastic search database 
+
+Django 
+1.It get the user input and sanitize the user input
+2.Send to elastic search 
+3.Elastic Seaarch fetch the data 
+4.Send to the django 
+5.Django send to client 

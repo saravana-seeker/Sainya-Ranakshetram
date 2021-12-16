@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #111;
+      min-height: 100vh;
+      overflow: scroll;
+      width: 100%;
+
+    }
+
+    header .navbar {
+      background-color: black;
+      box-shadow: 5px 5px 10px wheat;
+    }
+
+    header span {
+      color: red;
+    }
+
+    header h3 {
+      color: #999 !important;
+    }
+
+    header h3:hover {
+      transform: scale(1.3);
+    }
+
+    header #navbarSupportedContent li a {
+      color: white;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    header #navbarSupportedContent li a:hover {
+      color: red;
+      font-size: 15px;
+      font-weight: 500;
+      border-bottom: 3px solid white;
+    }
+
+    #Home img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 40px;
+    }
+
+    #Home .row {
+      text-align: center;
+      margin-top: 150px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #Home .row input {
+      border-radius: 20px 0px 0px 20px;
+    }
+
+    #Home #searchContent {
+      background-color: white;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-align: center;
+      padding: 20px 20px;
+      box-shadow: 0px 0px 7px #999;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!--Header starts-->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid mx-5">
+        <h3 class="navbar-brand"><span>SARAVANA </span>KUMAR</h3>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto me-2 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!--Header ends-->
+
+  <!--Home starts-->
+  <section id="Home">
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-12">
+        <img
+          src="https://lh3.googleusercontent.com/-ViJ-SDa39LU/Ybd_DCCuWhI/AAAAAAAAAQA/4zZKtrsB21woa5uQfDP6XJEoW_9S6yU3QCNcBGAsYHQ/IA-Logo.png"
+          alt="logo">
+        <form method="GET">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search here..." aria-label="Recipient's username"
+              aria-describedby="button-addon2" name="search" value="">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i
+                class="fas fa-search"></i></button>
+          </div>
+        </form>
+        {% if results %}
+        <div id="searchContent">
+          <h3>We found {{ count }} result{{ count|pluralize }} for your search "{{ search_term|escape }}" </h3>
+        </div>
+        {% for my_result in results %}
+        <div id="searchContent">
+
+          <bold><a href="{{ my_result.1 }}">{{ my_result.0 }}</a></bold>
+          <br>
+        </div>
+        {% endfor %}
+      </div>
+      {%elif not search_term %}
+     
+  
+      {%elif not results %}
+      <div id="searchContent">
+
+        <h4> No Results Found.</h4>
+      </div>
+      {% endif %}
+
+
+    </div>
+  </section>
+  <!--Home ends-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

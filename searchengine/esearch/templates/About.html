@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search About Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleAbout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            min-height: 100vh;
+            overflow: scroll;
+            width: 100%;
+        }
+
+        header .navbar {
+            background-color: black;
+            box-shadow: 5px 5px 10px wheat;
+        }
+
+        header span {
+            color: red;
+        }
+
+        header h3 {
+            color: #999 !important;
+        }
+
+        header h3:hover {
+            transform: scale(1.3);
+        }
+
+        header #navbarSupportedContent li a {
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        header #navbarSupportedContent li a:hover {
+            color: red;
+            font-size: 15px;
+            font-weight: 500;
+            border-bottom: 3px solid white;
+        }
+
+        #About img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 40px;
+        }
+
+        #About .row {
+            text-align: center;
+            margin-top: 150px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #About #row1 .card h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        #About #row1 span {
+            color: red;
+
+        }
+
+        #About #row1 h4 {
+            color: black;
+        }
+
+        #About #row2 {
+            margin-top: 50px;
+        }
+
+        #About #row2 .card-body {
+            text-align: center;
+            padding: 50px 0px;
+        }
+
+        #About #row2 .card-header h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        #About #row2 .card-header span {
+            color: red;
+        }
+
+        #About #row2 .card-body h4 {
+            color: black;
+            margin-bottom: 25px;
+        }
+
+        #About #row2 .card-body span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Header starts-->
+    <header>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+            <div class="container-fluid mx-5">
+                <h3 class="navbar-brand"><span>SARAVANA </span>KUMAR</h3>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto me-2 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="/about">About</a>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Header ends-->
+
+    <!--About starts-->
+    <section id="About">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+                <img src="https://lh3.googleusercontent.com/-ViJ-SDa39LU/Ybd_DCCuWhI/AAAAAAAAAQA/4zZKtrsB21woa5uQfDP6XJEoW_9S6yU3QCNcBGAsYHQ/IA-Logo.png"
+                    alt="logo">
+            </div>
+        </div>
+        <div class="container">
+            <div id="row1">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>About <span>Search Engine</span></h3>
+                    </div>
+                    <div class="card-body">
+                        <P>
+                        <h4>Introduction</h4>
+                        This project all about creating robust search engine , Its more secure reason behind i am using
+                        django framework . This project all about creating robust search engine , Its more secure reason
+                        behind i am using django framework . This project all about creating robust search engine , Its
+                        more secure reason behind i am using django framework .
+                        </P>
+                        <p>
+                        <h4> Why ElasticSearch</h4>
+                        Elasticsearch is a search engine based on the Lucene library. It provides a distributed,
+                        multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON
+                        documents.
+                        </p>
+                        <p>
+                        <h4>Technology</h4>
+                        ElasticSearch 7.16.0
+                        Django version 3.2
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--About Me-->
+            <div id="row2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>About <span>Me</span></h3>
+                    </div>
+                    <div class="card-body">
+                        <h4>Name: <span>SaravanaKumar.K</span></h4>
+                        <h4>Education: <span>BE (ECE)</span></h4>
+                        <h4>Role: <span>Learner , Pentester , Student , CTF Player
+                            </span></h4>
+                        <h4>E-Mail: <span>saravanaibstib@gmail.com</span></h4>
+                        <h4>LinkedIn Id: <span><a href="https://www.linkedin.com/in/saravanakumar-kanagaraj-414bab1b7/"
+                                    target="_blank">SaravanaKumar</a></span></h4>
+                        <h4>Tweeter: <span><a href="https://twitter.com/SaravanaSeeker" target="_blank">Saravana
+                                    Seeker</a></span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About ends-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

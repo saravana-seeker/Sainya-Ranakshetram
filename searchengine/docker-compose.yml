@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  es:
+    image: elasticsearch:7.16.0
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+
+ 
+
+  web:
+    build: .
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - es
